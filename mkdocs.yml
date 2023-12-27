@@ -1,0 +1,69 @@
+site_name: wwwillchen Personal Blog
+theme:
+  name: material
+  font:
+    text: Inter
+
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: mesop-light
+      toggle:
+        icon: material/brightness-7
+        name: Switch to light mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: mesop-dark
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+  features:
+    - content.code.copy
+    - navigation.path
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - search.highlight
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      auto_title: true
+
+  - pymdownx.superfences
+  - pymdownx.snippets
+
+plugins:
+  - blog:
+      blog_dir: .
+  - search
+  - mkdocstrings:
+      default_handler: python
+
+      handlers:
+        python:
+          options:
+            docstring_options:
+              ignore_init_summary: true
+            docstring_section_style: spacy
+            heading_level: 3
+            inherited_members: true
+            merge_init_into_class: true
+            separate_signature: false
+            show_signature: false
+            show_root_heading: true
+            show_root_full_path: false
+            show_source: false
+            show_signature_annotations: true
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            signature_crossrefs: true
+            summary: true
